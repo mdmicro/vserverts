@@ -7,6 +7,7 @@ import child from 'child_process';
 
 export default class VideoCam {
     public videoCamXaddr: Array<string> = []; // ссылки на адрес видеокамер для запроса служебной информации
+    public findedCams: OnvifInfo[] = [];
     private readonly pathVideo: string; // путь для хранения видеофайлов
     private pathScreenShot: string; // путь для хранения скриншотов
     private timeLimitVideoFilesMin: number;
@@ -85,6 +86,7 @@ export default class VideoCam {
                 console.log('  - ' + info.xaddrs[0]);
 
                 this.videoCamXaddr.push(info.xaddrs[0]);
+                this.findedCams.push(info);
             }
             return true;
         }
@@ -239,4 +241,10 @@ export interface CamConfig {
     ip: string,
     rtspUrl?: string,
     name: string,
+}
+
+export interface OnvifInfo {
+    urn: string;
+    name: string;
+    xaddrs: string[];
 }
