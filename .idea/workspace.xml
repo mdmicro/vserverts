@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
+    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added find cams action">
+      <change afterPath="$PROJECT_DIR$/vserverts/src/Menu/Item-Cam.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/vServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" afterDir="false" />
     </list>
@@ -19,6 +22,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -46,12 +50,13 @@
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/mdm/WebstormProjects/My/micropos-f",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
+    "settings.editor.selected.configurable": "editing.templates",
     "ts.external.directory.path": "C:\\Users\\mdm\\WebstormProjects\\My\\vServer\\vServer\\vserverts\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -114,7 +119,8 @@
       <workItem from="1707580859156" duration="4013000" />
       <workItem from="1707594542778" duration="926000" />
       <workItem from="1707661951391" duration="6656000" />
-      <workItem from="1708248239385" duration="5244000" />
+      <workItem from="1708248239385" duration="5377000" />
+      <workItem from="1708496905891" duration="5013000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
@@ -123,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707671558691</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added find cams action">
+      <created>1708254321825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708254321825</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +144,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class" />
+    <MESSAGE value="added find cams action" />
+    <option name="LAST_COMMIT_MESSAGE" value="added find cams action" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
