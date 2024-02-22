@@ -1,9 +1,9 @@
-import {ReactComponent} from "*.svg";
 import VideoCam, {CamConfig, OnvifInfo} from "../VideoCam";
 import {Button, Checkbox, Divider, message, Spin} from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import React, {useState} from "react";
 import {CheckboxChangeEvent} from "antd/lib/checkbox";
+import './Cam.css';
 
 
 export const Cam: React.FC = () => {
@@ -13,9 +13,11 @@ export const Cam: React.FC = () => {
 
 
     const onChangeItemCamHandler = (index: number, value: CheckboxChangeEvent) => {
-        findedCams[index].enable =value.target.checked;
-        console.log(findedCams)
+        findedCams[index].enable = value.target.checked;
         setFindedCams(findedCams)
+    }
+    const updateCamListHandler = async () => {
+
     }
 
     const findCamHandler = async () => {
@@ -31,32 +33,37 @@ export const Cam: React.FC = () => {
 
     return (
         <>
-            <div style={{textAlign: 'left'}}>
-                <Button onClick={findCamHandler}>Поиск видеокамер</Button>
-            </div>
+            <Button className='Button' onClick={findCamHandler}>Поиск видеокамер</Button>
             <Divider dashed />
-            <pre style={{textAlign: 'left'}}>Найденные видеокамеры</pre>
             {spinFindCam && <Spin indicator={<LoadingOutlined style={{fontSize: 24}} spin/>}/>}
-            {findedCams.length ? findedCams.map((item: OnvifInfoCam, index: number) => <ItemCam item={item} index={index} onChangeItemCam={onChangeItemCamHandler} />) : <></>}
+            {findedCams.length
+                ?
+                <>
+                    <pre style={{textAlign: 'left'}}>Найденные видеокамеры</pre>
+                    {findedCams.map((item: OnvifInfoCam, index: number) => <ItemCam item={item} index={index} onChangeItemCam={onChangeItemCamHandler}/>)}
+                    <Button className='Button' onClick={updateCamListHandler}>Сохранить</Button>
+                </>
+                : ''}
             <Divider dashed />
             <pre style={{textAlign: 'left'}}>Видеокамеры</pre>
         </>
     );
 }
 
+
 const ItemCam = (props: {item: OnvifInfoCam; index: number; onChangeItemCam: (index: number, value: CheckboxChangeEvent)=>void}) => {
     const {item, index, onChangeItemCam} = props;
 
     return (
     <>
-        <Checkbox checked={item.enable} onChange={(event) => onChangeItemCam(index, event)}>
+        <Checkbox onChange={(event) => onChangeItemCam(index, event)}>
             <a href={item.xaddrs[0]}>Cam{index}: {item.name} / {item.xaddrs}</a>
         </Checkbox>
-        <div>
-            <div className='Item-cam-info'>hw: {item.hardware || ''}</div>
-            <div className='Item-cam-info'>location: {item.location || ''}</div>
+        <div className='Item-cam-info'>
+            <div>hw: {item.hardware || ''}</div>
+            <div>location: {item.location || ''}</div>
             <div>scope:</div>
-            {item.scopes?.map(item => <div><a href={item} />{item}</div>)}
+            {item.scopes?.map(item => <div><a href={item}>{item}</a></div>)}
         </div>
 
     </>);

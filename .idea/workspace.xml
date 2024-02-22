@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added find cams action">
-      <change afterPath="$PROJECT_DIR$/vserverts/src/Menu/Item-Cam.css" afterDir="false" />
+    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="extended view findedcam info">
+      <change afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/vServer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,24 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/mdm/WebstormProjects/My/micropos-f",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editing.templates",
-    "ts.external.directory.path": "C:\\Users\\mdm\\WebstormProjects\\My\\vServer\\vServer\\vserverts\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mdm/WebstormProjects/My/micropos-f&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mdm\\WebstormProjects\\My\\vServer\\vServer\\vserverts\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mdm\WebstormProjects\My\vServer\vServer\vserverts\src\Menu" />
@@ -120,7 +117,8 @@
       <workItem from="1707594542778" duration="926000" />
       <workItem from="1707661951391" duration="6656000" />
       <workItem from="1708248239385" duration="5377000" />
-      <workItem from="1708496905891" duration="5013000" />
+      <workItem from="1708496905891" duration="5202000" />
+      <workItem from="1708634311781" duration="3214000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708254321825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="extended view findedcam info">
+      <created>1708502639474</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708502639474</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +150,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class" />
     <MESSAGE value="added find cams action" />
-    <option name="LAST_COMMIT_MESSAGE" value="added find cams action" />
+    <MESSAGE value="extended view findedcam info" />
+    <option name="LAST_COMMIT_MESSAGE" value="extended view findedcam info" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
