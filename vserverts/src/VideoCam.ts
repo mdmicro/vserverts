@@ -1,9 +1,6 @@
 import * as onvif from 'node-onvif-ts';
 import fs from 'fs';
 import child from 'child_process';
-// import CamLog from '@prebook/pretake/models/CamLog';
-// import Cam from '@prebook/pretake/models/Cam';
-// import {CamConfig} from '@prebook/pretake/options';
 
 export default class VideoCam {
     public videoCamXaddr: Array<string> = []; // ссылки на адрес видеокамер для запроса служебной информации
@@ -212,7 +209,7 @@ export default class VideoCam {
 
     /**
      * формирование строки команды выполнения ffmpeg
-     * @param timeLimitSec
+     * @param timeLimitMin
      * @param rtspUrl
      * @param objName
      */

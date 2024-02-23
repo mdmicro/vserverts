@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="extended view findedcam info">
-      <change afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" afterDir="false" />
+    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added select finded cams">
+      <change afterPath="$PROJECT_DIR$/vserverts/src/Config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -42,6 +43,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Notification.DisplayName-DoNotAsk-Vcs Important Messages&quot;: &quot;VCS important messages&quot;,
+    &quot;Notification.DoNotAsk-Vcs Important Messages&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -118,7 +121,8 @@
       <workItem from="1707661951391" duration="6656000" />
       <workItem from="1708248239385" duration="5377000" />
       <workItem from="1708496905891" duration="5202000" />
-      <workItem from="1708634311781" duration="3214000" />
+      <workItem from="1708634311781" duration="3313000" />
+      <workItem from="1708714734255" duration="4058000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
@@ -141,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708502639474</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added select finded cams">
+      <created>1708637635706</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708637635706</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +162,8 @@
     <MESSAGE value="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class" />
     <MESSAGE value="added find cams action" />
     <MESSAGE value="extended view findedcam info" />
-    <option name="LAST_COMMIT_MESSAGE" value="extended view findedcam info" />
+    <MESSAGE value="added select finded cams" />
+    <option name="LAST_COMMIT_MESSAGE" value="added select finded cams" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {
@@ -12,20 +12,28 @@ import { Layout, Menu, Button, theme } from 'antd';
 import MenuItem from 'antd/es/menu/MenuItem';
 import {View} from './Menu/View';
 import {Cam} from './Menu/Cam';
-import {CamConfig} from "./VideoCam";
+import {CamConfig, OnvifInfo} from "./VideoCam";
 import {Setting} from "./Menu/Setting";
 import {About} from "./Menu/About";
+import {GlobalConfig, readConfig} from "./Config";
 
 const { Header, Sider, Content } = Layout;
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState<MenuKey>(MenuKey.View);
+  const [globalConfig, setGlobalConfig] = useState<GlobalConfig>();
 
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
+  useEffect(() => {
+      (async ()=> {
+          const config: GlobalConfig = await readConfig()
+          setGlobalConfig(config)
+      })()
+  }, [])
 
   const content = (key: MenuKey) => {
     switch (key) {
