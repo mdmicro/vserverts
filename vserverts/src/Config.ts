@@ -25,6 +25,10 @@ export const readConfig = async (): Promise<GlobalConfig> => {
     }
 }
 
+export const saveConfig = async (config: GlobalConfig): Promise<void> => {
+    await writeFile(globalConfigPath,JSON.stringify(config));
+}
+
 export interface GlobalConfig {
     cams: OnvifInfo[];
     recordSetting: {

@@ -1,4 +1,8 @@
-.Button {
+.Button-Find {
+    text-align: left;
+}
+
+.Button-Save {
     margin-top: 10px;
     text-align: left;
 }

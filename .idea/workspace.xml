@@ -3,11 +3,17 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BookmarksViewState">
+    <option name="rewriteBookmarkType" value="true" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added select finded cams">
-      <change afterPath="$PROJECT_DIR$/vserverts/src/Config.ts" afterDir="false" />
+    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added GlobalConfig create, read">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vserverts/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +128,9 @@
       <workItem from="1708248239385" duration="5377000" />
       <workItem from="1708496905891" duration="5202000" />
       <workItem from="1708634311781" duration="3313000" />
-      <workItem from="1708714734255" duration="4058000" />
+      <workItem from="1708714734255" duration="5771000" />
+      <workItem from="1708864814014" duration="1554000" />
+      <workItem from="1708878368636" duration="3939000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
@@ -152,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708637635706</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added GlobalConfig create, read">
+      <created>1708718869940</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708718869940</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +178,8 @@
     <MESSAGE value="added find cams action" />
     <MESSAGE value="extended view findedcam info" />
     <MESSAGE value="added select finded cams" />
-    <option name="LAST_COMMIT_MESSAGE" value="added select finded cams" />
+    <MESSAGE value="added GlobalConfig create, read" />
+    <option name="LAST_COMMIT_MESSAGE" value="added GlobalConfig create, read" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

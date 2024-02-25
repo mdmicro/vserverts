@@ -17,15 +17,15 @@ export default class VideoCam {
         this.timeLimitVideoFilesMin = timeLimitVideoFilesMin;
         this.cams = ipCams;
 
-        (async () => {
-            for (let i = 0; i < ipCams.length; i += 1) {
-                if (!ipCams[i].rtspUrl || ipCams[i].rtspUrl === '') {
-                    ipCams[i].rtspUrl = await this.findRtspUrl(ipCams[i].ip);
-                    console.log('rtsp Cam: ' + ipCams[i].rtspUrl);
-                }
-            }
-            this.camRecordStart();
-        })();
+        // (async () => {
+        //     for (let i = 0; i < ipCams.length; i += 1) {
+        //         if (!ipCams[i].rtspUrl || ipCams[i].rtspUrl === '') {
+        //             ipCams[i].rtspUrl = await this.findRtspUrl(ipCams[i].ip);
+        //             console.log('rtsp Cam: ' + ipCams[i].rtspUrl);
+        //         }
+        //     }
+        //     this.camRecordStart();
+        // })();
     }
 
     public camRecordStart(): void {
@@ -73,21 +73,28 @@ export default class VideoCam {
         console.info('Start the discovery cam process.');
         // Find the ONVIF network cameras.
         // It will take about 3 seconds.
-        const deviceInfoList = await onvif.startProbe();
-        if (deviceInfoList) {
-            console.info('\n' + deviceInfoList.length + ' devices were found.');
-            // Show the device name and the URL of the end point.
-            for (const info of deviceInfoList) {
-                console.info('- ' + info.urn);
-                console.info('  - ' + info.name);
-                console.log('  - ' + info.xaddrs[0]);
+        try {
+            const deviceInfoList = await onvif.startProbe();
+            if (deviceInfoList) {
+                console.info('\n' + deviceInfoList.length + ' devices were found.');
+                // Show the device name and the URL of the end point.
+                for (const item of deviceInfoList) {
+                    console.info('- ' + item.urn);
+                    console.info('  - ' + item.name);
+                    console.log('  - ' + item.xaddrs[0]);
 
-                this.videoCamXaddr.push(info.xaddrs[0]);
-                this.findedCams.push(info);
+                    this.videoCamXaddr.push(item.xaddrs[0]);
+                    this.findedCams.push({
+                        ...item,
+                        rtspUrl: await VideoCam.getStreamUrl(item.xaddrs[0]),
+                    });
+                }
+                return true;
             }
-            return true;
+            return false;
+        } catch (e) {
+            return false;
         }
-        return false;
     }
 
 
@@ -106,7 +113,7 @@ export default class VideoCam {
                 console.log('  - ' + info.xaddrs[0]);
 
                 if (info.xaddrs[0].includes(ip)) {
-                    const url = await this.getStreamUrl(info.xaddrs[0], '', '');
+                    const url = await VideoCam.getStreamUrl(info.xaddrs[0], '', '');
                     if (url) {
                         return url;
                     }
@@ -122,7 +129,7 @@ export default class VideoCam {
      * @param login
      * @param psw
      */
-    public async getStreamUrl(xaddr: string, login?: string, psw?: string): Promise<string | undefined> {
+    public static async getStreamUrl(xaddr: string, login?: string, psw?: string): Promise<string | undefined> {
         // Create an OnvifDevice object
         const device = new onvif.OnvifDevice({
             xaddr,
@@ -236,8 +243,8 @@ interface FfmpegFileCfg {
 
 export interface CamConfig {
     ip: string,
-    rtspUrl?: string,
     name: string,
+    rtspUrl?: string,
 }
 
 export interface OnvifInfo {
@@ -247,4 +254,5 @@ export interface OnvifInfo {
     hardware?: string;
     location?: string;
     scopes?: string[];
+    rtspUrl: string | undefined;
 }

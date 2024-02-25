@@ -22,7 +22,7 @@ const { Header, Sider, Content } = Layout;
 function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState<MenuKey>(MenuKey.View);
-  const [globalConfig, setGlobalConfig] = useState<GlobalConfig>();
+  const [globalConfig, setGlobalConfig] = useState<GlobalConfig | undefined>();
 
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -35,12 +35,16 @@ function App() {
       })()
   }, [])
 
+  const updateConfigHandler = () => {
+
+  }
+
   const content = (key: MenuKey) => {
     switch (key) {
         case MenuKey.View:
             return <View />
         case MenuKey.Cam:
-            return <Cam />
+            return <Cam config={globalConfig} updateConfig={updateConfigHandler} />
         case MenuKey.Setting:
             return <Setting />
         case MenuKey.About:
