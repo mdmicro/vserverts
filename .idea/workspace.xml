@@ -7,14 +7,10 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added GlobalConfig create, read">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added rtspUrl to config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +126,8 @@
       <workItem from="1708634311781" duration="3313000" />
       <workItem from="1708714734255" duration="5771000" />
       <workItem from="1708864814014" duration="1554000" />
-      <workItem from="1708878368636" duration="3939000" />
+      <workItem from="1708878368636" duration="4262000" />
+      <workItem from="1709476047840" duration="9307000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
@@ -167,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708718869940</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added rtspUrl to config">
+      <created>1708882574469</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708882574469</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +183,8 @@
     <MESSAGE value="extended view findedcam info" />
     <MESSAGE value="added select finded cams" />
     <MESSAGE value="added GlobalConfig create, read" />
-    <option name="LAST_COMMIT_MESSAGE" value="added GlobalConfig create, read" />
+    <MESSAGE value="added rtspUrl to config" />
+    <option name="LAST_COMMIT_MESSAGE" value="added rtspUrl to config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

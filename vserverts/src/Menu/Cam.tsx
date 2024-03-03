@@ -1,10 +1,12 @@
 import VideoCam, {CamConfig, OnvifInfo} from "../VideoCam";
-import {Button, Checkbox, Divider, message, Spin} from "antd";
+import {Button, Checkbox, Divider, Input, message, Modal, Spin} from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import React, {useEffect, useState} from "react";
 import {CheckboxChangeEvent} from "antd/lib/checkbox";
 import './Cam.css';
 import {GlobalConfig} from "../Config";
+import FormItem from "antd/es/form/FormItem";
+import Form, {useForm} from "antd/es/form/Form";
 
 
 export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (cams: CamConfig[])=>void }> = ({config, updateConfig}) => {
@@ -12,6 +14,8 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
     const [messageApi, contextHolder] = message.useMessage();
     const [spinFindCam, setSpin] = useState(false);
     const [findedCams, setFindedCams] = useState<OnvifInfoCam[]>([]);
+    // const [modalManualCamVisible, setModalManualCamVisible] = useState<boolean>(false);
+    const [formManual] = useForm<{name: string; rtspUrl: string}>();
 
     useEffect(()=>{
         setGlobalConfig(config)
@@ -38,18 +42,45 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
         setSpin(true);
         await cam.findCam()
         setSpin(false);
+        console.log(cam)
 
         setFindedCams(cam.findedCams.map((item: OnvifInfo)=>
         { return {...item, enable: true}}));
         !cam.videoCamXaddr && messageApi.warning('Видеокамеры не найдены');
     }
 
-    // const CurrentCams = () => {
-    //     return globalConfig?.cams.map(item => {
-    //         return (
-    //
-    //         )});
-    // }
+    const modalManualHandler = () => {
+        const modal = Modal.confirm({
+            onOk: () => {
+                if (globalConfig) {
+                    const cams = globalConfig.cams;
+                    cams.push({
+                        urn: "",
+                        xaddrs: [],
+                        name: formManual.getFieldValue('name'),
+                        rtspUrl: formManual.getFieldValue('rtspUrl')
+                    })
+                    setGlobalConfig({...globalConfig, cams})
+                }
+                // setModalManualCamVisible(false)
+                modal.destroy()
+            },
+            onCancel: () => {
+                // setModalManualCamVisible(false)
+                modal.destroy()
+            },
+            content: (
+                <Form form={formManual}>
+                    <FormItem name='name' label='Имя камеры'>
+                        <Input />
+                    </FormItem>
+                    <FormItem name='rtspUrl' label='Адрес потока rtsUrl'>
+                        <Input />
+                    </FormItem>
+                </Form>
+            ),
+        })
+    }
 
     return (
         <>
@@ -71,8 +102,12 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
                 </>
                 : ''}
             <Divider dashed />
+
             <pre style={{textAlign: 'left'}}>Видеокамеры</pre>
-            {/*{globalConfig?.cams.map((item: OnvifInfo, index: number) => <ItemCamCurrent item={item} index={index} onChangeItemCamCurrent={onChangeItemCamHandler}/>)}*/}
+            {globalConfig?.cams.map((item: OnvifInfo, index: number) => <ItemCamCurrent item={{...item, enable: false}} index={index} onChangeItemCamCurrent={onChangeItemCamCurrent}/>)}
+            <div>
+                <Button className='Button-Manual' onClick={modalManualHandler}>Добавить вручную</Button>
+            </div>
         </>
     );
 }
@@ -82,7 +117,7 @@ const ItemCamFind = (props: {item: OnvifInfoCam; index: number; onChangeItemCam:
     const {item, index, onChangeItemCam} = props;
 
     return (
-    <>
+    <div key={index}>
         <Checkbox onChange={(event) => onChangeItemCam(index, event)}>
             <a href={item.xaddrs[0]}>Cam{index}: {item.name} / {item.xaddrs}</a>
         </Checkbox>
@@ -96,19 +131,25 @@ const ItemCamFind = (props: {item: OnvifInfoCam; index: number; onChangeItemCam:
             <div>scope:</div>
             {item.scopes?.map(item => <div><a href={item}>{item}</a></div>)}
         </div>
-
-    </>);
+    </div>
+    );
 };
 
-const ItemCamCurrent = (props: {item: CamConfig; index: number; onChangeItemCamCurrent: (index: number, value: CheckboxChangeEvent)=>void}) => {
+
+const onChangeItemCamCurrent = (index: number, value: CheckboxChangeEvent) => {
+    
+console.log(index, value)
+}
+const ItemCamCurrent = (props: {item: OnvifInfoCam; index: number; onChangeItemCamCurrent: (index: number, value: CheckboxChangeEvent)=>void}) => {
     const {item, index, onChangeItemCamCurrent} = props;
 
     return (
-        <>
-        {/*<Checkbox onChange={(event) => onChangeItemCam(index, event)}>*/}
-            <a href={item.ip}>Cam{index}: {item.name} / ip: {item.ip} {item.rtspUrl ? `/ rtspUrl: ${item.rtspUrl}` : ''}</a>
-        {/*</Checkbox>*/}
-        </>);
+        <div key={index}>
+        <Checkbox onChange={(event) => onChangeItemCamCurrent(index, event)}>
+            <a href={item.rtspUrl || ''}>Cam{index}: {item.name} / rtspUrl: {item.rtspUrl || ''}</a>
+        </Checkbox>
+        </div>
+    );
 };
 
 interface OnvifInfoCam extends OnvifInfo {
