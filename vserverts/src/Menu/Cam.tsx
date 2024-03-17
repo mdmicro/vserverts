@@ -4,37 +4,26 @@ import { LoadingOutlined } from '@ant-design/icons';
 import React, {useEffect, useState} from "react";
 import {CheckboxChangeEvent} from "antd/lib/checkbox";
 import './Cam.css';
-import {GlobalConfig} from "../Config";
+import {GlobalConfig, saveConfig} from "../Config";
 import FormItem from "antd/es/form/FormItem";
 import Form, {useForm} from "antd/es/form/Form";
 
 
-export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (cams: OnvifInfoCam[])=>void}> = ({config, updateConfig}) => {
-    const [globalConfig, setGlobalConfig] = useState<GlobalConfig | undefined>()
+export const Cam: React.FC<{config: GlobalConfig, updateConfig: (cams: OnvifInfoCam[])=>void}> = ({config, updateConfig}) => {
+    const [globalConfig, setGlobalConfig] = useState<GlobalConfig>(config)
     const [messageApi, contextHolder] = message.useMessage();
     const [spinFindCam, setSpin] = useState(false);
     const [findedCams, setFindedCams] = useState<OnvifInfoCam[]>([]);
-    // const [modalManualCamVisible, setModalManualCamVisible] = useState<boolean>(false);
     const [formManual] = useForm<{name: string; rtspUrl: string}>();
 
     useEffect(()=>{
         setGlobalConfig(config)
     }, [config])
 
-
     const onChangeItemCamHandler = (index: number, value: CheckboxChangeEvent) => {
         findedCams[index].enable = value.target.checked;
         setFindedCams(findedCams)
     }
-
-    const onChangeItemCamCurrentHandler = (index: number, value: CheckboxChangeEvent) => {
-        // findedCams[index].enable = value.target.checked;
-        // setFindedCams(findedCams)
-    }
-
-    // const updateCamListHandler = async () => {
-    //
-    // }
 
     const findCamHandler = async () => {
         const cam = new VideoCam('./', './', 5, []);
@@ -62,11 +51,9 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
                     })
                     setGlobalConfig({...globalConfig, cams})
                 }
-                // setModalManualCamVisible(false)
                 modal.destroy()
             },
             onCancel: () => {
-                // setModalManualCamVisible(false)
                 modal.destroy()
             },
             content: (
@@ -82,8 +69,33 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
         })
     }
 
-    const modalDeleteManualHandler = () => {
+    const onChangeItemCamCurrent = (index: number, value: CheckboxChangeEvent) => {
+        const cams = globalConfig.cams;
+        cams[index].enable = value.target.checked;
 
+        setGlobalConfig({...globalConfig, cams})
+    }
+
+    const ItemCamCurrent = (props: {item: OnvifInfoCam; index: number; onChangeItemCamCurrent: (index: number, value: CheckboxChangeEvent)=>void}) => {
+        const {item, index, onChangeItemCamCurrent} = props;
+
+        return (
+            <div key={index}>
+                <Checkbox onChange={(event) => onChangeItemCamCurrent(index, event)} checked={item.enable}>
+                    <a href={item.rtspUrl || ''}>Cam{index}: {item.name}</a>
+                </Checkbox>
+            </div>
+        );
+    };
+
+    const deleteCamHandler = async (): Promise<void> => {
+        const newCams: OnvifInfoCam[] = [];
+        for (const cam of globalConfig.cams) {
+            !cam.enable && newCams.push(cam)
+        }
+
+        setGlobalConfig({...globalConfig, cams: newCams})
+        await updateConfig(newCams)
     }
 
     return (
@@ -96,11 +108,7 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
                 <>
                     <pre style={{textAlign: 'left'}}>Найденные видеокамеры</pre>
                     {findedCams.map((item: OnvifInfoCam, index: number) => <ItemCamFind key={index} item={item} index={index} onChangeItemCam={onChangeItemCamHandler}/>)}
-                    <Button className='Button-Save' onClick={async ()=> updateConfig(findedCams.map(item => {
-                        return {
-                            ...item
-                        }
-                    }))}>Сохранить</Button>
+                    <Button className='Button-Save' onClick={async ()=> updateConfig(globalConfig.cams.concat(findedCams))}>Сохранить</Button>
                 </>
                 : ''}
             <Divider dashed />
@@ -109,7 +117,7 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
             {globalConfig?.cams.map((item: OnvifInfoCam, index: number) => <ItemCamCurrent key={index} item={item} index={index} onChangeItemCamCurrent={onChangeItemCamCurrent}/>)}
             <div>
                 <Button className='Button-Manual' onClick={modalAddManualHandler}>Добавить вручную</Button>
-                <Button className='Button-Manual' onClick={modalDeleteManualHandler}>Удалить</Button>
+                <Button className='Button-Manual' onClick={deleteCamHandler}>Удалить</Button>
             </div>
         </>
     );
@@ -135,23 +143,6 @@ const ItemCamFind = (props: {item: OnvifInfoCam; index: number; onChangeItemCam:
             {item.scopes?.map(item => <div><a href={item}>{item}</a></div>)}
         </div>
     </div>
-    );
-};
-
-
-const onChangeItemCamCurrent = (index: number, value: CheckboxChangeEvent) => {
-    
-console.log(index, value)
-}
-const ItemCamCurrent = (props: {item: OnvifInfoCam; index: number; onChangeItemCamCurrent: (index: number, value: CheckboxChangeEvent)=>void}) => {
-    const {item, index, onChangeItemCamCurrent} = props;
-
-    return (
-        <div key={index}>
-        <Checkbox onChange={(event) => onChangeItemCamCurrent(index, event)}>
-            <a href={item.rtspUrl || ''}>Cam{index}: {item.name} / rtspUrl: {item.rtspUrl || ''}</a>
-        </Checkbox>
-        </div>
     );
 };
 

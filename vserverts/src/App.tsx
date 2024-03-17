@@ -22,7 +22,12 @@ const { Header, Sider, Content } = Layout;
 function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState<MenuKey>(MenuKey.View);
-  const [globalConfig, setGlobalConfig] = useState<GlobalConfig>();
+  const [globalConfig, setGlobalConfig] = useState<GlobalConfig>({
+      cams: [],
+      recordSetting: {
+          path: '',
+          intervalRecordMinut: 5,
+      }});
 
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -37,7 +42,7 @@ function App() {
 
   const updateConfigHandler = async (cams: OnvifInfoCam[]) => {
       if (globalConfig) {
-          const newGlobalConfig = {...globalConfig, cams: cams.concat(globalConfig.cams)}
+          const newGlobalConfig = {...globalConfig, cams}
           setGlobalConfig(newGlobalConfig)
           await saveConfig(newGlobalConfig)
       }
