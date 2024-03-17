@@ -1,26 +1,23 @@
-import {OnvifInfo} from "./VideoCam";
 import {access, readFile, writeFile} from "fs/promises";
 import path from "node:path";
+import {OnvifInfoCam} from "./Menu/Cam";
 
 
 export const globalConfigPath = path.join(process.cwd(), '/config.json');
 
 export const readConfig = async (): Promise<GlobalConfig> => {
-    console.log(globalConfigPath)
     try {
         await access(globalConfigPath)
-        const res = await readFile(globalConfigPath)?.toString();
-        return JSON.parse(res);
+        const config = (await readFile(globalConfigPath))?.toString();
+        return JSON.parse(config);
     } catch (e) {
         const config: GlobalConfig = {
             cams: [],
             recordSetting: {
                 path: './',
                 intervalRecordMinut: 5,
-                maxArchiveSizeGb: undefined
             }
         };
-        await writeFile(globalConfigPath,JSON.stringify(config));
         return config;
     }
 }
@@ -30,10 +27,10 @@ export const saveConfig = async (config: GlobalConfig): Promise<void> => {
 }
 
 export interface GlobalConfig {
-    cams: OnvifInfo[];
+    cams: OnvifInfoCam[];
     recordSetting: {
         path: string;
         intervalRecordMinut: number;
-        maxArchiveSizeGb: number | undefined;
+        maxArchiveSizeGb?: number;
     }
 }

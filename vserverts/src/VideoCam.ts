@@ -251,6 +251,7 @@ export interface OnvifInfo {
     urn: string;
     name: string;
     xaddrs: string[];
+    types?: string[];
     hardware?: string;
     location?: string;
     scopes?: string[];

@@ -9,7 +9,7 @@ import FormItem from "antd/es/form/FormItem";
 import Form, {useForm} from "antd/es/form/Form";
 
 
-export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (cams: CamConfig[])=>void }> = ({config, updateConfig}) => {
+export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (cams: OnvifInfoCam[])=>void}> = ({config, updateConfig}) => {
     const [globalConfig, setGlobalConfig] = useState<GlobalConfig | undefined>()
     const [messageApi, contextHolder] = message.useMessage();
     const [spinFindCam, setSpin] = useState(false);
@@ -49,7 +49,7 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
         !cam.videoCamXaddr && messageApi.warning('Видеокамеры не найдены');
     }
 
-    const modalManualHandler = () => {
+    const modalAddManualHandler = () => {
         const modal = Modal.confirm({
             onOk: () => {
                 if (globalConfig) {
@@ -82,6 +82,10 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
         })
     }
 
+    const modalDeleteManualHandler = () => {
+
+    }
+
     return (
         <>
             <Button className='Button-Find' onClick={findCamHandler}>Поиск видеокамер</Button>
@@ -91,22 +95,21 @@ export const Cam: React.FC<{ config: GlobalConfig | undefined, updateConfig: (ca
                 ?
                 <>
                     <pre style={{textAlign: 'left'}}>Найденные видеокамеры</pre>
-                    {findedCams.map((item: OnvifInfoCam, index: number) => <ItemCamFind item={item} index={index} onChangeItemCam={onChangeItemCamHandler}/>)}
-                    <Button className='Button-Save' onClick={()=>updateConfig(findedCams.map(item => {
+                    {findedCams.map((item: OnvifInfoCam, index: number) => <ItemCamFind key={index} item={item} index={index} onChangeItemCam={onChangeItemCamHandler}/>)}
+                    <Button className='Button-Save' onClick={async ()=> updateConfig(findedCams.map(item => {
                         return {
-                        name: item.name,
-                        ip: '',
-                        rtspUrl: '',
-                    }
+                            ...item
+                        }
                     }))}>Сохранить</Button>
                 </>
                 : ''}
             <Divider dashed />
 
             <pre style={{textAlign: 'left'}}>Видеокамеры</pre>
-            {globalConfig?.cams.map((item: OnvifInfo, index: number) => <ItemCamCurrent item={{...item, enable: false}} index={index} onChangeItemCamCurrent={onChangeItemCamCurrent}/>)}
+            {globalConfig?.cams.map((item: OnvifInfoCam, index: number) => <ItemCamCurrent key={index} item={item} index={index} onChangeItemCamCurrent={onChangeItemCamCurrent}/>)}
             <div>
-                <Button className='Button-Manual' onClick={modalManualHandler}>Добавить вручную</Button>
+                <Button className='Button-Manual' onClick={modalAddManualHandler}>Добавить вручную</Button>
+                <Button className='Button-Manual' onClick={modalDeleteManualHandler}>Удалить</Button>
             </div>
         </>
     );
@@ -152,6 +155,6 @@ const ItemCamCurrent = (props: {item: OnvifInfoCam; index: number; onChangeItemC
     );
 };
 
-interface OnvifInfoCam extends OnvifInfo {
-    enable: boolean;
+export interface OnvifInfoCam extends OnvifInfo {
+    enable?: boolean;
 }

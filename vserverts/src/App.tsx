@@ -11,18 +11,18 @@ import {
 import { Layout, Menu, Button, theme } from 'antd';
 import MenuItem from 'antd/es/menu/MenuItem';
 import {View} from './Menu/View';
-import {Cam} from './Menu/Cam';
+import {Cam, OnvifInfoCam} from './Menu/Cam';
 import {CamConfig, OnvifInfo} from "./VideoCam";
 import {Setting} from "./Menu/Setting";
 import {About} from "./Menu/About";
-import {GlobalConfig, readConfig} from "./Config";
+import {GlobalConfig, globalConfigPath, readConfig, saveConfig} from "./Config";
 
 const { Header, Sider, Content } = Layout;
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState<MenuKey>(MenuKey.View);
-  const [globalConfig, setGlobalConfig] = useState<GlobalConfig | undefined>();
+  const [globalConfig, setGlobalConfig] = useState<GlobalConfig>();
 
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -35,7 +35,12 @@ function App() {
       })()
   }, [])
 
-  const updateConfigHandler = () => {
+  const updateConfigHandler = async (cams: OnvifInfoCam[]) => {
+      if (globalConfig) {
+          const newGlobalConfig = {...globalConfig, cams: cams.concat(globalConfig.cams)}
+          setGlobalConfig(newGlobalConfig)
+          await saveConfig(newGlobalConfig)
+      }
 
   }
 
