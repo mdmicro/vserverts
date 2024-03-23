@@ -9,8 +9,34 @@
   <component name="ChangeListManager">
     <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added write a different cams list and view saved cams list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/About.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Item-Cam.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Setting.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/View.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/logo.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/reportWebVitals.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vserverts/tsconfig.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +56,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="f9d57b49-82d0-45a0-878d-39c512c7c85a" />
+    <option name="defaultAccountId" value="fae2f413-02be-4c3d-a215-01396883438d" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,39 +69,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Notification.DisplayName-DoNotAsk-Vcs Important Messages&quot;: &quot;VCS important messages&quot;,
-    &quot;Notification.DoNotAsk-Vcs Important Messages&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mdm/WebstormProjects/My/micropos-f&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mdm\\WebstormProjects\\My\\vServer\\vServer\\vserverts\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/ya-md/WebstormProjects/vserverts/vserverts/src/Component",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
+    "ts.external.directory.path": "C:\\Users\\ya-md\\WebstormProjects\\vserverts\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ya-md\WebstormProjects\vserverts\vserverts\src\Component" />
       <recent name="C:\Users\mdm\WebstormProjects\My\vServer\vServer\vserverts\src\Menu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ya-md\WebstormProjects\vserverts" />
       <recent name="C:\Users\mdm\WebstormProjects\My\vServer\vServer\vserverts\src" />
       <recent name="C:\Users\mdm\WebstormProjects\My\vServer\vServer\vserverts" />
       <recent name="C:\Users\mdm\WebstormProjects\My\vServer\vServer" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/vserverts/package.json" />
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build" />
@@ -85,7 +113,7 @@
       <method v="2" />
     </configuration>
     <configuration name="start test" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/vserverts/package.json" />
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="test" />
@@ -95,7 +123,7 @@
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/vserverts/package.json" />
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -130,6 +158,13 @@
       <workItem from="1709476047840" duration="10069000" />
       <workItem from="1710669659978" duration="9164000" />
       <workItem from="1710703087478" duration="4411000" />
+      <workItem from="1710970038600" duration="200000" />
+      <workItem from="1711052397387" duration="42000" />
+      <workItem from="1711053003503" duration="649000" />
+      <workItem from="1711134459835" duration="91000" />
+      <workItem from="1711188635491" duration="3633000" />
+      <workItem from="1711219128154" duration="2067000" />
+      <workItem from="1711221257605" duration="840000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
