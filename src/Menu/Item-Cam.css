@@ -1,0 +1,10 @@
+
+.Item-Cam {
+    text-align: left;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.Item-cam-info {
+    margin-left: 50px;
+}

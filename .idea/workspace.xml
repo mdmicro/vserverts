@@ -8,35 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added write a different cams list and view saved cams list">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/About.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Cam.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Item-Cam.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/Setting.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/Menu/View.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/VideoCam.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/logo.icns" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vserverts/tsconfig.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ya-md/WebstormProjects/vserverts/vserverts/src/Component",
+    "last_opened_file_path": "C:/Users/mdm/WebstormProjects/mdm/vserverts",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,7 +59,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
-    "ts.external.directory.path": "C:\\Users\\ya-md\\WebstormProjects\\vserverts\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\mdm\\WebstormProjects\\mdm\\vserverts\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -165,6 +139,7 @@
       <workItem from="1711188635491" duration="3633000" />
       <workItem from="1711219128154" duration="2067000" />
       <workItem from="1711221257605" duration="840000" />
+      <workItem from="1711354805952" duration="366000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
