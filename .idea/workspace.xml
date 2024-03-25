@@ -7,10 +7,10 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added write a different cams list and view saved cams list">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="rework directory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/CamView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/CamView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu/View.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu/View.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="fae2f413-02be-4c3d-a215-01396883438d" />
+    <option name="defaultAccountId" value="5f024d7f-b86b-49cb-bf40-4fd469fcdada" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -75,7 +75,7 @@
       <recent name="C:\Users\mdm\WebstormProjects\My\vServer\vServer" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -139,7 +139,7 @@
       <workItem from="1711188635491" duration="3633000" />
       <workItem from="1711219128154" duration="2067000" />
       <workItem from="1711221257605" duration="840000" />
-      <workItem from="1711354805952" duration="366000" />
+      <workItem from="1711354805952" duration="1365000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
@@ -197,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710679591408</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="rework directory">
+      <created>1711355251078</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711355251078</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +219,8 @@
     <MESSAGE value="added rtspUrl to config" />
     <MESSAGE value="added manual add cam modal win open" />
     <MESSAGE value="added write a different cams list and view saved cams list" />
-    <option name="LAST_COMMIT_MESSAGE" value="added write a different cams list and view saved cams list" />
+    <MESSAGE value="rework directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="rework directory" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
