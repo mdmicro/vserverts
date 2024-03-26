@@ -1,6 +1,7 @@
 import * as onvif from 'node-onvif-ts';
 import fs from 'fs';
 import child from 'child_process';
+import path from "node:path";
 
 export default class VideoCam {
     public videoCamXaddr: Array<string> = []; // ссылки на адрес видеокамер для запроса служебной информации
@@ -176,13 +177,13 @@ export default class VideoCam {
     /**
      * Record RTSP stream from VideoCam
      * @param rtspUrl
-     * @param objName -  имя объекта видеосъёмки
+     * @param objName -  имя объекта видео съёмки
      * @param timeLimitMin - ограничение времени записи в файл, мин.
      */
     public recordFromCam(rtspUrl: string, objName: string, timeLimitMin: number): void {
         this.childFunc(this.cmdString(timeLimitMin, rtspUrl, objName), objName);
 
-        setInterval(async () => this.childFunc(this.cmdString(timeLimitMin, rtspUrl, objName), objName), timeLimitMin * 60 * 1000);
+        setInterval(async () => this.childFunc(this.cmdString(timeLimitMin, rtspUrl, objName), objName), timeLimitMin * 60 * 1000 + 1_000);
     }
 
     /**
@@ -223,12 +224,17 @@ export default class VideoCam {
     private cmdString(timeLimitMin: number, rtspUrl: string, objName: string): FfmpegFileCfg {
         const dtStartRecord = new Date();
         const dtEndRecord = new Date(new Date().getTime() + timeLimitMin * 60 * 1000);
-        const fileName = `${this.pathVideo}/${objName}_${dtStartRecord.toLocaleString()}_${dtEndRecord.toLocaleString()}.mp4`;
+        const fileName =  path.join(
+            process.cwd(),
+            `../Record/${this.pathVideo}/`) + `${objName}_${dtStartRecord.toLocaleDateString()}_${dtStartRecord.toLocaleTimeString().replace(':', '-')}.mp4`;
 
         return {
             endDate: dtEndRecord,
             startDate: dtStartRecord,
-            cmdStr: `./Util/ffmpegWin/bin/ffmpeg -rtsp_transport tcp -i "${rtspUrl}" -r 30 -vcodec copy -an -t ${timeLimitMin * 60} "${fileName}"`,
+            cmdStr: path.join(
+                process.cwd(),
+                '../src/Util/ffmpegWin/bin/ffmpeg'
+            ) + ` -rtsp_transport tcp -i "${rtspUrl}" -r 30 -vcodec copy -an -t ${timeLimitMin * 60} "${fileName}"`,
             fileName,
         };
     }

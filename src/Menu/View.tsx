@@ -13,6 +13,6 @@ export const View: React.FC = () => {
     })
 
     return <>
-        {config?.cams.map(cam => <CamView cam={cam}/>)}
+        {config?.cams.map(cam => <CamView key={cam.name} cam={cam} recordSetting={config.recordSetting} />)}
     </>
 }

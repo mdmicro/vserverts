@@ -1,12 +1,36 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { PlayCircleOutlined, LoginOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
+import {Avatar, Card, message} from 'antd';
 import {OnvifInfoCam} from "../Menu/Cam";
+import VideoCam from "../VideoCam";
+import {RecordSetting} from "../Config";
+import path from "node:path";
 
 const { Meta } = Card;
 
-export const CamView: React.FC<{ cam?: OnvifInfoCam }> = (props) => {
-    const {cam} = props;
+export const CamView: React.FC<{ cam: OnvifInfoCam, recordSetting: RecordSetting }> = (props) => {
+    const {cam, recordSetting} = props;
+    const [messageApi, contextHolder] = message.useMessage();
+
+    // const recordPath = path.join(recordSetting.path, `/${cam.name}`);
+    const recordPath = path.join('')
+    const videoCam = new VideoCam(recordPath, recordPath, recordSetting.intervalRecordMinut, [{
+        ip: '',
+        name: 'cam1',
+        rtspUrl: cam.rtspUrl,
+    }] )
+
+    const recordHandler = () => {
+        try {
+            console.log('recordHandler');
+            console.log(recordPath);
+            console.log(process.cwd());
+            videoCam.camRecordStart()
+        } catch (e) {
+            e instanceof Error ? messageApi.error(e.message) : messageApi.error('Ошибка включения записи')
+        }
+    }
+
     return <>
         {
             cam
@@ -20,7 +44,7 @@ export const CamView: React.FC<{ cam?: OnvifInfoCam }> = (props) => {
                     }*/
                     actions={[
                         <SettingOutlined key="setting"/>,
-                        <LoginOutlined key="record"/>,
+                        <LoginOutlined key="record" onClick={() => recordHandler()}/>,
                         <PlayCircleOutlined key="play"/>,
                     ]}
                 >

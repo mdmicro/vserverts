@@ -28,9 +28,11 @@ export const saveConfig = async (config: GlobalConfig): Promise<void> => {
 
 export interface GlobalConfig {
     cams: OnvifInfoCam[];
-    recordSetting: {
-        path: string;
-        intervalRecordMinut: number;
-        maxArchiveSizeGb?: number;
-    }
+    recordSetting: RecordSetting;
+}
+
+export interface RecordSetting {
+    path: string;
+    intervalRecordMinut: number;
+    maxArchiveSizeGb?: number;
 }
