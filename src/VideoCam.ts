@@ -226,7 +226,7 @@ export default class VideoCam {
         const dtEndRecord = new Date(new Date().getTime() + timeLimitMin * 60 * 1000);
         const fileName =  path.join(
             process.cwd(),
-            `../Record/${this.pathVideo}/`) + `${objName}_${dtStartRecord.toLocaleDateString()}_${dtStartRecord.toLocaleTimeString().replace(':', '-')}.mp4`;
+            `../Record/${this.pathVideo}/`) + `${objName}_${dtStartRecord.toLocaleDateString()}_${dtStartRecord.toLocaleTimeString().replace(/:/g, '.')}.mp4`;
 
         return {
             endDate: dtEndRecord,

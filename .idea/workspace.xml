@@ -7,12 +7,8 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added readConfig to View menu and displayed cam component">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1c86d333-4551-4696-b99b-22087deb4a6c" name="Changes" comment="added record cam">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/CamView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/CamView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu/View.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu/View.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VideoCam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/VideoCam.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +139,8 @@
       <workItem from="1711219128154" duration="2067000" />
       <workItem from="1711221257605" duration="840000" />
       <workItem from="1711354805952" duration="2166000" />
-      <workItem from="1711435462347" duration="6922000" />
+      <workItem from="1711435462347" duration="7448000" />
+      <workItem from="1711521739324" duration="1977000" />
     </task>
     <task id="LOCAL-00001" summary="added menu pages&#10;added sceleton menu pages&#10;added VideoCam class">
       <created>1707671558691</created>
@@ -215,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711356280963</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added record cam">
+      <created>1711442727565</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711442727565</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +236,8 @@
     <MESSAGE value="added write a different cams list and view saved cams list" />
     <MESSAGE value="rework directory" />
     <MESSAGE value="added readConfig to View menu and displayed cam component" />
-    <option name="LAST_COMMIT_MESSAGE" value="added readConfig to View menu and displayed cam component" />
+    <MESSAGE value="added record cam" />
+    <option name="LAST_COMMIT_MESSAGE" value="added record cam" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
